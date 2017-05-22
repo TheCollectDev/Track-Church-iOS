@@ -242,8 +242,8 @@
 				TargetAttributes = {
 					9B520BCA1DFD89E50094097D = {
 						CreatedOnToolsVersion = 8.1;
-						DevelopmentTeam = TLD24BM42Z;
-						ProvisioningStyle = Automatic;
+						DevelopmentTeam = 2849PU2T6W;
+						ProvisioningStyle = Manual;
 					};
 					9B520BDE1DFD89E50094097D = {
 						CreatedOnToolsVersion = 8.1;
@@ -606,13 +606,16 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = ABB49C1B8764A5E537FF93DA /* Pods-Track Church.debug.xcconfig */;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = "$(inherited)";
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = TLD24BM42Z;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DEVELOPMENT_TEAM = 2849PU2T6W;
 				INFOPLIST_FILE = "Track Church/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "church.track.Track-Church";
+				PRODUCT_BUNDLE_IDENTIFIER = church.track.Track;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "5d7723ea-45a7-41cc-920d-b717674417c7";
+				PROVISIONING_PROFILE_SPECIFIER = "Track Church Development Profile";
 				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
@@ -621,13 +624,16 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = B6E6945B9E800BA7097983EC /* Pods-Track Church.release.xcconfig */;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = "$(inherited)";
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = TLD24BM42Z;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DEVELOPMENT_TEAM = 2849PU2T6W;
 				INFOPLIST_FILE = "Track Church/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "church.track.Track-Church";
+				PRODUCT_BUNDLE_IDENTIFIER = church.track.Track;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "5d7723ea-45a7-41cc-920d-b717674417c7";
+				PROVISIONING_PROFILE_SPECIFIER = "Track Church Development Profile";
 				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
