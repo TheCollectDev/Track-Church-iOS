@@ -239,3 +239,6 @@ playground.xcworkspace
 /*.gcno
 
 # End of https://www.gitignore.io/api/macos,swift,xcode,appcode,cocoapods,objective-c
+
+### Firebase ###
+GoogleService-Info.plist
