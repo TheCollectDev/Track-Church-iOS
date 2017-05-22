@@ -7,12 +7,16 @@
 //
 
 import UIKit
+import FirebaseAuthUI
 
 class ViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+        let authUI = FUIAuth.defaultAuthUI()
+        let authViewController = authUI!.authViewController()
+        self.navigationController?.present(authViewController, animated: true, completion: nil)
     }
 
     override func didReceiveMemoryWarning() {
