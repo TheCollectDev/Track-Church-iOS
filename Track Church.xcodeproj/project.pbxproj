@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		12C37197E69478DE0C88342C /* Pods_Track_Church.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1CE169B513E986E03C39B176 /* Pods_Track_Church.framework */; };
+		9B1D10FC1ED3878B002E2AF5 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 9B1D10FB1ED3878B002E2AF5 /* GoogleService-Info.plist */; };
 		9B520BCF1DFD89E50094097D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B520BCE1DFD89E50094097D /* AppDelegate.swift */; };
 		9B520BD11DFD89E50094097D /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B520BD01DFD89E50094097D /* ViewController.swift */; };
 		9B520BD41DFD89E50094097D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9B520BD21DFD89E50094097D /* Main.storyboard */; };
@@ -41,6 +42,7 @@
 		2F82A851AF25E3B0AE0675DE /* Pods-Track ChurchTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Track ChurchTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Track ChurchTests/Pods-Track ChurchTests.debug.xcconfig"; sourceTree = "<group>"; };
 		320A488E97051871C6C8E706 /* Pods_Track_ChurchUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Track_ChurchUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		5F10C5A5074B3556EAACB080 /* Pods-Track ChurchUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Track ChurchUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-Track ChurchUITests/Pods-Track ChurchUITests.release.xcconfig"; sourceTree = "<group>"; };
+		9B1D10FB1ED3878B002E2AF5 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		9B520BCB1DFD89E50094097D /* Track Church.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Track Church.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		9B520BCE1DFD89E50094097D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		9B520BD01DFD89E50094097D /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -138,6 +140,7 @@
 		9B520BCD1DFD89E50094097D /* Track Church */ = {
 			isa = PBXGroup;
 			children = (
+				9B1D10FB1ED3878B002E2AF5 /* GoogleService-Info.plist */,
 				9BCB8DD41ED370BC007CFDE4 /* Track Church.entitlements */,
 				9B520BCE1DFD89E50094097D /* AppDelegate.swift */,
 				9B520BD01DFD89E50094097D /* ViewController.swift */,
@@ -298,6 +301,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				9B520BD91DFD89E50094097D /* LaunchScreen.storyboard in Resources */,
+				9B1D10FC1ED3878B002E2AF5 /* GoogleService-Info.plist in Resources */,
 				9B520BD61DFD89E50094097D /* Assets.xcassets in Resources */,
 				9B520BD41DFD89E50094097D /* Main.storyboard in Resources */,
 			);
