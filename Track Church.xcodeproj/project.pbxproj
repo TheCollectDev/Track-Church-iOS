@@ -54,6 +54,7 @@
 		9B520BEA1DFD89E50094097D /* Track ChurchUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Track ChurchUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		9B520BEE1DFD89E50094097D /* Track_ChurchUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Track_ChurchUITests.swift; sourceTree = "<group>"; };
 		9B520BF01DFD89E50094097D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		9BCB8DD41ED370BC007CFDE4 /* Track Church.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "Track Church.entitlements"; sourceTree = "<group>"; };
 		ABB49C1B8764A5E537FF93DA /* Pods-Track Church.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Track Church.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Track Church/Pods-Track Church.debug.xcconfig"; sourceTree = "<group>"; };
 		ABB6CB7EF99A8B18E484B777 /* Pods_Track_ChurchTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Track_ChurchTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B6E6945B9E800BA7097983EC /* Pods-Track Church.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Track Church.release.xcconfig"; path = "Pods/Target Support Files/Pods-Track Church/Pods-Track Church.release.xcconfig"; sourceTree = "<group>"; };
@@ -137,6 +138,7 @@
 		9B520BCD1DFD89E50094097D /* Track Church */ = {
 			isa = PBXGroup;
 			children = (
+				9BCB8DD41ED370BC007CFDE4 /* Track Church.entitlements */,
 				9B520BCE1DFD89E50094097D /* AppDelegate.swift */,
 				9B520BD01DFD89E50094097D /* ViewController.swift */,
 				9B520BD21DFD89E50094097D /* Main.storyboard */,
@@ -244,6 +246,17 @@
 						CreatedOnToolsVersion = 8.1;
 						DevelopmentTeam = 2849PU2T6W;
 						ProvisioningStyle = Manual;
+						SystemCapabilities = {
+							com.apple.BackgroundModes = {
+								enabled = 1;
+							};
+							com.apple.Keychain = {
+								enabled = 1;
+							};
+							com.apple.Push = {
+								enabled = 1;
+							};
+						};
 					};
 					9B520BDE1DFD89E50094097D = {
 						CreatedOnToolsVersion = 8.1;
@@ -608,6 +621,7 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = "$(inherited)";
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = "Track Church/Track Church.entitlements";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				DEVELOPMENT_TEAM = 2849PU2T6W;
 				INFOPLIST_FILE = "Track Church/Info.plist";
@@ -626,6 +640,7 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = "$(inherited)";
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = "Track Church/Track Church.entitlements";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				DEVELOPMENT_TEAM = 2849PU2T6W;
 				INFOPLIST_FILE = "Track Church/Info.plist";
