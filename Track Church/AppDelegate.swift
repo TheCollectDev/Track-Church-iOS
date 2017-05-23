@@ -7,6 +7,8 @@
 //
 
 import UIKit
+import Fabric
+import TwitterKit
 import Firebase
 import FirebaseAuthUI
 import FirebaseGoogleAuthUI
@@ -22,6 +24,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, FUIAuthDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
+        Fabric.with([Twitter.self])
         FirebaseApp.configure()
         let providers: [FUIAuthProvider] = [
             FUIGoogleAuth(),
@@ -64,13 +67,27 @@ class AppDelegate: UIResponder, UIApplicationDelegate, FUIAuthDelegate {
         if FUIAuth.defaultAuthUI()?.handleOpen(url, sourceApplication: sourceApplication) ?? false {
             return true
         }
-        // other URL handling goes here.
         return false
     }
     
     func authUI(_ authUI: FUIAuth, didSignInWith user: User?, error: Error?) {
+        if let uid = user?.uid {
+            NSLog(uid)
+        }
+        
         // Do something
-        NSLog((user?.displayName)!);
+        if let userName = user?.displayName {
+            NSLog(userName)
+        }
+        
+        if let email = user?.email {
+            NSLog(email)
+        }
+        
+        if let phone = user?.phoneNumber {
+            NSLog(phone)
+        }
+        
     }
 
 }
