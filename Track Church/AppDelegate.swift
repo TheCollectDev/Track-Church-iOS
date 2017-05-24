@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import UserNotifications
 import Fabric
 import TwitterKit
 import Firebase
@@ -17,7 +18,7 @@ import FirebaseTwitterAuthUI
 import FirebasePhoneAuthUI
 
 @UIApplicationMain
-class AppDelegate: UIResponder, UIApplicationDelegate, FUIAuthDelegate {
+class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterDelegate, FUIAuthDelegate, MessagingDelegate {
 
     var window: UIWindow?
 
@@ -37,6 +38,29 @@ class AppDelegate: UIResponder, UIApplicationDelegate, FUIAuthDelegate {
         
         // You need to adopt a FUIAuthDelegate protocol to receive callback
         authUI?.delegate = self
+        
+        let msg = Messaging.messaging()
+        msg.delegate = self
+        
+        let token = msg.fcmToken
+        print("FCM token: \(token ?? "")")
+        
+        if #available(iOS 10.0, *) {
+            // For iOS 10 display notification (sent via APNS)
+            UNUserNotificationCenter.current().delegate = self
+            
+            let authOptions: UNAuthorizationOptions = [.alert, .badge, .sound]
+            UNUserNotificationCenter.current().requestAuthorization(
+                options: authOptions,
+                completionHandler: {_, _ in })
+        } else {
+            let settings: UIUserNotificationSettings =
+                UIUserNotificationSettings(types: [.alert, .badge, .sound], categories: nil)
+            application.registerUserNotificationSettings(settings)
+        }
+        
+        application.registerForRemoteNotifications()
+        
         return true
     }
 
@@ -88,6 +112,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate, FUIAuthDelegate {
             NSLog(phone)
         }
         
+        let token = Messaging.messaging().fcmToken
+        print("FCM token: \(token ?? "")")
+        
+    }
+    
+    func messaging(_ messaging: Messaging, didRefreshRegistrationToken fcmToken: String) {
+        print("Firebase registration token: \(fcmToken)")
     }
 
 }

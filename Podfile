@@ -8,6 +8,7 @@ target 'Track Church' do
   # Pods for Track Church
   pod 'Firebase', '~> 4.0'
   pod 'FirebaseUI', '~> 4.0'
+  pod 'FirebaseMessaging', '~> 2.0'
   pod 'SwiftForms', '~> 1.7'
   pod 'Timepiece', '~> 1.2'
 
