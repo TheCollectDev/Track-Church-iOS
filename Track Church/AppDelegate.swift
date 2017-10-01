@@ -8,7 +8,6 @@
 
 import UIKit
 import UserNotifications
-import Fabric
 import TwitterKit
 import Firebase
 import FirebaseAuthUI
@@ -25,7 +24,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
-        Fabric.with([Twitter.self])
         FirebaseApp.configure()
         let providers: [FUIAuthProvider] = [
             FUIGoogleAuth(),
