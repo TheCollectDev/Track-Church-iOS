@@ -39,7 +39,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
         
         authHandler = Auth.auth().addStateDidChangeListener { [weak self] (auth, user) in
             if user != nil {
-                self?.showHomeView()
+                // TODO: Add loading screen here while this happens
+                self?.setupDatabaseReferences(forUser: user)
             } else {
                 self?.showAuthUI()
             }
@@ -50,6 +51,24 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
         return true
     }
     
+    func setupDatabaseReferences(forUser user: User?) {
+        guard let userId = user?.uid else {
+            debugPrint("Not logged in yet...wait, what?!")
+            return
+        }
+        DB.users.child(userId).observeSingleEvent(of: .value, with: { [unowned self] (snapshot) in
+            // Get user value
+            guard let value = snapshot.value as? [String : AnyObject] else { return }
+            guard let church = value["church"] as? [String : AnyObject], let churchId = church["id"] as? String else { return }
+            guard let campus = value["campus"] as? [String : AnyObject], let campusId = campus["id"] as? String else { return }
+            DB.setChurch(churchId)
+            DB.setCampus(campusId)
+            
+            self.showHomeView()
+        }) { (error) in
+            print(error.localizedDescription)
+        }
+    }
     
     func showHomeView() {
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
