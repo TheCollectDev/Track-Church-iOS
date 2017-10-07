@@ -12,7 +12,7 @@
         <!--Navigation Controller-->
         <scene sceneID="1dh-s3-Z1g">
             <objects>
-                <navigationController id="n60-yh-bha" sceneMemberID="viewController">
+                <navigationController storyboardIdentifier="HomeNavController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="n60-yh-bha" sceneMemberID="viewController">
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="MfJ-1M-VFF">
                         <rect key="frame" x="0.0" y="20" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -25,10 +25,10 @@
             </objects>
             <point key="canvasLocation" x="-78" y="91"/>
         </scene>
-        <!--Choose Church-->
+        <!--Choose Gathering-->
         <scene sceneID="hpS-fB-iYb">
             <objects>
-                <tableViewController id="XjU-wm-b9C" sceneMemberID="viewController">
+                <tableViewController id="XjU-wm-b9C" customClass="ChooseGatheringTableViewController" customModule="Track_Church" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="5Ho-cx-G9X">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -48,8 +48,13 @@
                             <outlet property="delegate" destination="XjU-wm-b9C" id="F5b-Hm-nFH"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Choose Church" largeTitleDisplayMode="always" id="EhK-fG-tQl">
+                    <navigationItem key="navigationItem" title="Choose Gathering" largeTitleDisplayMode="always" id="EhK-fG-tQl">
                         <barButtonItem key="backBarButtonItem" title="Church" id="bjU-fp-2IJ"/>
+                        <barButtonItem key="leftBarButtonItem" title="Log Out" id="ZGy-Po-rg2">
+                            <connections>
+                                <action selector="logOutTapped:" destination="XjU-wm-b9C" id="YHD-zc-FFj"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="TML-CJ-ZGY" userLabel="First Responder" sceneMemberID="firstResponder"/>
