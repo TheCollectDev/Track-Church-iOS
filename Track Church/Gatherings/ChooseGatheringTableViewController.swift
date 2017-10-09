@@ -35,14 +35,13 @@ class ChooseGatheringTableViewController: UITableViewController {
         try! Auth.auth().signOut()
     }
     
-    /*
-    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
-
-        // Configure the cell...
-
-        return cell
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "showAvailableMetricsForGathering" {
+            guard let gatheringIndex = tableView.indexPathForSelectedRow?.row else { return }
+            guard let chooseMetricVC = segue.destination as? ChooseMetricTableViewController else { return }
+            let chooseMetricVM = ChooseMetricViewModel(forGathering: model.gatherings[gatheringIndex])
+            chooseMetricVC.model = chooseMetricVM
+        }
     }
-    */
     
 }

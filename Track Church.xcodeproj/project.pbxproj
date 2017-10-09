@@ -17,6 +17,8 @@
 		9B520BEF1DFD89E50094097D /* Track_ChurchUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B520BEE1DFD89E50094097D /* Track_ChurchUITests.swift */; };
 		9B5D8F111F88ED5E0013957A /* DB.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B5D8F101F88ED5E0013957A /* DB.swift */; };
 		9B5D8F131F88F4DF0013957A /* ChooseGatheringViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B5D8F121F88F4DF0013957A /* ChooseGatheringViewModel.swift */; };
+		9B5D8F161F8AB7A30013957A /* ChooseMetricTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B5D8F151F8AB7A30013957A /* ChooseMetricTableViewController.swift */; };
+		9B5D8F181F8AB8A90013957A /* ChooseMetricViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B5D8F171F8AB8A90013957A /* ChooseMetricViewModel.swift */; };
 		9B868F051F813F7500667FAC /* ChooseGatheringTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B868F041F813F7500667FAC /* ChooseGatheringTableViewController.swift */; };
 		EED4F2ED2E15F935E6C1F2EB /* Pods_Track_ChurchUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 320A488E97051871C6C8E706 /* Pods_Track_ChurchUITests.framework */; };
 		FE18D63B1B1950BE71EEA134 /* Pods_Track_ChurchTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ABB6CB7EF99A8B18E484B777 /* Pods_Track_ChurchTests.framework */; };
@@ -60,6 +62,8 @@
 		9B5D8F0E1F88E6830013957A /* Track Church.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "Track Church.entitlements"; sourceTree = "<group>"; };
 		9B5D8F101F88ED5E0013957A /* DB.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DB.swift; sourceTree = "<group>"; };
 		9B5D8F121F88F4DF0013957A /* ChooseGatheringViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChooseGatheringViewModel.swift; sourceTree = "<group>"; };
+		9B5D8F151F8AB7A30013957A /* ChooseMetricTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChooseMetricTableViewController.swift; sourceTree = "<group>"; };
+		9B5D8F171F8AB8A90013957A /* ChooseMetricViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChooseMetricViewModel.swift; sourceTree = "<group>"; };
 		9B868F041F813F7500667FAC /* ChooseGatheringTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChooseGatheringTableViewController.swift; sourceTree = "<group>"; };
 		ABB49C1B8764A5E537FF93DA /* Pods-Track Church.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Track Church.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Track Church/Pods-Track Church.debug.xcconfig"; sourceTree = "<group>"; };
 		ABB6CB7EF99A8B18E484B777 /* Pods_Track_ChurchTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Track_ChurchTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -149,7 +153,8 @@
 				9B520BDA1DFD89E50094097D /* Info.plist */,
 				9B5D8F0E1F88E6830013957A /* Track Church.entitlements */,
 				9B5D8F0F1F88ED4C0013957A /* General */,
-				9B868F031F813EFA00667FAC /* Sections */,
+				9B868F031F813EFA00667FAC /* Gatherings */,
+				9B5D8F141F8AB7820013957A /* Metrics */,
 				9B868F061F813F8C00667FAC /* Support Files */,
 			);
 			path = "Track Church";
@@ -181,13 +186,22 @@
 			path = General;
 			sourceTree = "<group>";
 		};
-		9B868F031F813EFA00667FAC /* Sections */ = {
+		9B5D8F141F8AB7820013957A /* Metrics */ = {
+			isa = PBXGroup;
+			children = (
+				9B5D8F151F8AB7A30013957A /* ChooseMetricTableViewController.swift */,
+				9B5D8F171F8AB8A90013957A /* ChooseMetricViewModel.swift */,
+			);
+			path = Metrics;
+			sourceTree = "<group>";
+		};
+		9B868F031F813EFA00667FAC /* Gatherings */ = {
 			isa = PBXGroup;
 			children = (
 				9B868F041F813F7500667FAC /* ChooseGatheringTableViewController.swift */,
 				9B5D8F121F88F4DF0013957A /* ChooseGatheringViewModel.swift */,
 			);
-			path = Sections;
+			path = Gatherings;
 			sourceTree = "<group>";
 		};
 		9B868F061F813F8C00667FAC /* Support Files */ = {
@@ -500,7 +514,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				9B520BCF1DFD89E50094097D /* AppDelegate.swift in Sources */,
+				9B5D8F181F8AB8A90013957A /* ChooseMetricViewModel.swift in Sources */,
 				9B868F051F813F7500667FAC /* ChooseGatheringTableViewController.swift in Sources */,
+				9B5D8F161F8AB7A30013957A /* ChooseMetricTableViewController.swift in Sources */,
 				9B5D8F111F88ED5E0013957A /* DB.swift in Sources */,
 				9B5D8F131F88F4DF0013957A /* ChooseGatheringViewModel.swift in Sources */,
 			);

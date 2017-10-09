@@ -32,6 +32,11 @@ class DB {
         return DB.shared.reference.child("gatherings").child(church)
     }
     
+    class var metrics: DatabaseReference? {
+        guard let church = DB.shared.church else { return nil }
+        return DB.shared.reference.child("metrics").child(church)
+    }
+    
     class func setChurch(_ church: String) {
         DB.shared.church = church
     }

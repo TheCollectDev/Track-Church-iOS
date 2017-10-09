@@ -41,6 +41,9 @@
                                     <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <segue destination="qAn-8I-OiX" kind="show" identifier="showAvailableMetricsForGathering" id="byf-Iz-PNm"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
@@ -49,7 +52,7 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="Choose Gathering" largeTitleDisplayMode="always" id="EhK-fG-tQl">
-                        <barButtonItem key="backBarButtonItem" title="Church" id="bjU-fp-2IJ"/>
+                        <barButtonItem key="backBarButtonItem" title="Gatherings" id="bjU-fp-2IJ"/>
                         <barButtonItem key="leftBarButtonItem" title="Log Out" id="ZGy-Po-rg2">
                             <connections>
                                 <action selector="logOutTapped:" destination="XjU-wm-b9C" id="YHD-zc-FFj"/>
@@ -60,6 +63,53 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="TML-CJ-ZGY" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="673" y="90"/>
+        </scene>
+        <!--Choose Metric-->
+        <scene sceneID="MHh-Sb-4In">
+            <objects>
+                <tableViewController id="qAn-8I-OiX" customClass="ChooseMetricTableViewController" customModule="Track_Church" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="Dp7-X9-NFF">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="metricCell" textLabel="TNB-0W-GFY" detailTextLabel="VXQ-oe-eLc" style="IBUITableViewCellStyleSubtitle" id="DNK-Lt-GgX">
+                                <rect key="frame" x="0.0" y="28" width="375" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="DNK-Lt-GgX" id="TCZ-rM-cmQ">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="TNB-0W-GFY">
+                                            <rect key="frame" x="16" y="5" width="33.5" height="20.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Subtitle" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="VXQ-oe-eLc">
+                                            <rect key="frame" x="16" y="25.5" width="44" height="14.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="qAn-8I-OiX" id="JnQ-Pc-c0v"/>
+                            <outlet property="delegate" destination="qAn-8I-OiX" id="aZR-jD-P8h"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="Choose Metric" id="J1e-0v-kEo">
+                        <barButtonItem key="backBarButtonItem" title="Metrics" id="cnM-VL-gk5"/>
+                    </navigationItem>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Gig-ne-KFK" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1468" y="90"/>
         </scene>
     </scenes>
 </document>

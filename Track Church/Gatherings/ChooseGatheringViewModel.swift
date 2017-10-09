@@ -16,6 +16,7 @@ struct Gathering {
     var doy: DayOfWeek? = nil
     var startTime: String? = nil
     var reminderTime: String? = nil
+    var metrics: [String]? = nil
     
     init(id: String) {
         self.id = id
@@ -23,31 +24,39 @@ struct Gathering {
 }
 
 class ChooseGatheringViewModel {
+    var retrieved: Bool = false
     var gatherings: [Gathering] = []
-    var gatheringsRetrieved:(([Gathering]) -> Void)?
+    var gatheringsRetrieved:(([Gathering]) -> Void)? {
+        didSet {
+            if retrieved {
+                self.gatheringsRetrieved?(gatherings)
+            }
+        }
+    }
     
     init() {
         getListofAvailableGatherings()
     }
     
     func getListofAvailableGatherings() {
-        DB.campus?.observeSingleEvent(of: .value) { [unowned self] (snapshot) in
+        DB.campus?.observeSingleEvent(of: .value) { [weak self] (snapshot) in
             guard let root = snapshot.value as? [String : AnyObject] else { return }
             guard let gatherings = root["gatherings"] as? [String : Bool ] else { return }
             let listOfGatherings = Array(gatherings.keys)
-            self.getHumanReadbleListOfGatherings(listOfGatherings)
+            self?.getHumanReadbleListOfGatherings(listOfGatherings)
         }
     }
     
     func getHumanReadbleListOfGatherings(_ gatherings: [String]) {
-        DB.gatherings?.observeSingleEvent(of: .value) { [unowned self] (snapshot) in
+        DB.gatherings?.observeSingleEvent(of: .value) { [weak self] (snapshot) in
             let listOfAllChurchGatherings = snapshot.value as? [String : AnyObject]
             let onlyCampusGatherings = listOfAllChurchGatherings?.filter({ (pair) -> Bool in
                 return gatherings.contains(pair.key)
             })
-            let parsedGatherings = self.parseFBGatherings(onlyCampusGatherings)
-            self.gatherings = parsedGatherings
-            self.gatheringsRetrieved?(parsedGatherings)
+            guard let parsedGatherings = self?.parseFBGatherings(onlyCampusGatherings) else { return }
+            self?.gatherings = parsedGatherings
+            self?.retrieved = true
+            self?.gatheringsRetrieved?(parsedGatherings)
         }
     }
     
@@ -70,6 +79,9 @@ class ChooseGatheringViewModel {
             }
             if let reminderTime = details["reminderTime"] as? String {
                 gathering.reminderTime = reminderTime
+            }
+            if let metricList = details["metrics"] as? [String : AnyObject] {
+                gathering.metrics = Array(metricList.keys)
             }
             return gathering
         }
